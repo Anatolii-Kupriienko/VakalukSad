@@ -1,4 +1,5 @@
 ﻿using CompleteImageGame;
+using CompleteImageGameApp.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,9 @@ namespace CompleteImageGameApp.AppLogic
             }
             return DifficultyEnum.Medium;
         }
-        public static ChooseDifficultyForm StartGame(Panel panel, ChooseDifficultyForm form)
+        public static ChooseLevelAndDifficultyForm StartGame(Panel panel, ChooseLevelAndDifficultyForm form)
         {
-            form = new ChooseDifficultyForm();
+            form = new ChooseLevelAndDifficultyForm();
             form.TopLevel = false;
             panel.Dock = DockStyle.Fill;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -33,6 +34,16 @@ namespace CompleteImageGameApp.AppLogic
             form.BringToFront();
             form.Show();
             return form;
+        }
+        public static void ActivatePbButton(PictureBox lastSelected, PictureBox sender)
+        {
+            var selectedPB = sender;
+            lastSelected.Size = new Size(120, 120);
+            lastSelected.BorderStyle = BorderStyle.None;
+            lastSelected.Location = new Point(lastSelected.Location.X + 10, lastSelected.Location.Y + 5);
+            selectedPB.Size = new Size(140, 140);
+            selectedPB.BorderStyle = BorderStyle.FixedSingle;
+            selectedPB.Location = new Point(selectedPB.Location.X - 10, selectedPB.Location.Y - 5);
         }
     }
 }

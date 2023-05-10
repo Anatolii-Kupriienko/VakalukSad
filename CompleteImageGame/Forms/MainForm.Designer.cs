@@ -31,14 +31,16 @@
             startButton = new Button();
             mainPanel = new Panel();
             exitButton = new Button();
+            mainPanel.SuspendLayout();
             SuspendLayout();
             // 
             // startButton
             // 
+            startButton.Anchor = AnchorStyles.None;
             startButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            startButton.Location = new Point(344, 171);
+            startButton.Location = new Point(381, 197);
             startButton.Name = "startButton";
-            startButton.Size = new Size(92, 46);
+            startButton.Size = new Size(112, 43);
             startButton.TabIndex = 0;
             startButton.Text = "Почати";
             startButton.UseVisualStyleBackColor = true;
@@ -46,19 +48,22 @@
             // 
             // mainPanel
             // 
-            mainPanel.Location = new Point(0, 243);
+            mainPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            mainPanel.Controls.Add(exitButton);
+            mainPanel.Location = new Point(692, 373);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(308, 207);
+            mainPanel.Size = new Size(200, 100);
             mainPanel.TabIndex = 1;
             mainPanel.ControlRemoved += mainPanel_ControlRemoved;
             // 
             // exitButton
             // 
+            exitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             exitButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            exitButton.Location = new Point(702, 399);
+            exitButton.Location = new Point(75, 42);
             exitButton.Name = "exitButton";
-            exitButton.Size = new Size(86, 39);
-            exitButton.TabIndex = 2;
+            exitButton.Size = new Size(112, 43);
+            exitButton.TabIndex = 1;
             exitButton.Text = "Вийти";
             exitButton.UseVisualStyleBackColor = true;
             exitButton.Click += exitButton_Click;
@@ -67,12 +72,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(exitButton);
+            ClientSize = new Size(891, 470);
             Controls.Add(mainPanel);
             Controls.Add(startButton);
+            MinimumSize = new Size(400, 400);
             Name = "MainForm";
             Text = "MainForm";
+            mainPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 

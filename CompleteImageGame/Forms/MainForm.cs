@@ -14,34 +14,47 @@ namespace CompleteImageGameApp.Forms
 {
     public partial class MainForm : Form
     {
-        public DifficultyEnum _chosenDifficulty;
-        public Bitmap _chosenImage;
-        public ChooseDifficultyForm _difficultyForm;
-        public ChooseLevelForm _levelForm;
+        public static DifficultyEnum chosenDifficulty;
+        public static Image chosenImage;
+        public ChooseLevelAndDifficultyForm chooseLevelAndDifficultyForm;
+        public Form activeForm;
         public MainForm()
         {
             InitializeComponent();
-            mainPanel.Hide();
+            activeForm = this;
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            _difficultyForm = GameSetup.StartGame(mainPanel, _difficultyForm);
-            this.Text = _difficultyForm.Text;
-            exitButton.Hide();
-            mainPanel.Show();
+            chooseLevelAndDifficultyForm = GameSetup.StartGame(mainPanel, chooseLevelAndDifficultyForm);
+            activeForm = chooseLevelAndDifficultyForm;
+            this.Text = chooseLevelAndDifficultyForm.Text;
+            exitButton.BringToFront();
+            if (this.Size.Width < 870 || this.Size.Height < 300)
+            {
+                this.Size = new Size(870, 300);
+            }
+            this.MinimumSize = new Size(870, 300);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (activeForm == this)
+            {
+                this.Close();
+            }
+            activeForm.Close();
+            mainPanel.Dock = DockStyle.None;
+            activeForm = this;
         }
 
         private void mainPanel_ControlRemoved(object sender, ControlEventArgs e)
         {
-            mainPanel.Hide();
-            exitButton.Show();
-            this.Text = "Main menu";
+            if (activeForm == this)
+            {
+                mainPanel.Hide();
+                this.Text = "Main menu";
+            }
         }
     }
 }
