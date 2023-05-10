@@ -1,6 +1,8 @@
-﻿namespace CompleteImageGame
+﻿using CompleteImageGameApp.AppLogic;
+
+namespace CompleteImageGame
 {
-    partial class mainMenuForm
+    partial class ChooseDifficultyForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -68,6 +70,7 @@
             EasyDifficultyRadioButton.Name = "EasyDifficultyRadioButton";
             EasyDifficultyRadioButton.Size = new Size(80, 29);
             EasyDifficultyRadioButton.TabIndex = 2;
+            EasyDifficultyRadioButton.Tag = DifficultyEnum.Easy;
             EasyDifficultyRadioButton.Text = "Легко";
             EasyDifficultyRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -82,6 +85,7 @@
             MediumDifficultyRadioButton.Size = new Size(130, 29);
             MediumDifficultyRadioButton.TabIndex = 3;
             MediumDifficultyRadioButton.TabStop = true;
+            MediumDifficultyRadioButton.Tag = DifficultyEnum.Medium;
             MediumDifficultyRadioButton.Text = "Нормально";
             MediumDifficultyRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -94,6 +98,7 @@
             HardDifficultyRadioButton.Name = "HardDifficultyRadioButton";
             HardDifficultyRadioButton.Size = new Size(85, 29);
             HardDifficultyRadioButton.TabIndex = 4;
+            HardDifficultyRadioButton.Tag = DifficultyEnum.Hard;
             HardDifficultyRadioButton.Text = "Важко";
             HardDifficultyRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -109,7 +114,7 @@
             exitButton.UseVisualStyleBackColor = true;
             exitButton.Click += exitButton_Click;
             // 
-            // mainMenuForm
+            // ChooseDifficultyForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -121,10 +126,10 @@
             Controls.Add(chooseDifficultyLabel);
             Controls.Add(chooseImageButton);
             MinimumSize = new Size(400, 400);
-            Name = "mainMenuForm";
+            Name = "ChooseDifficultyForm";
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Main menu";
+            Text = "Choose Difficulty";
             ResumeLayout(false);
             PerformLayout();
         }

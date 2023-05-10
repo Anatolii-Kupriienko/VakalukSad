@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompleteImageGame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace CompleteImageGameApp.AppLogic
 {
     public static class GameSetup
     {
-        public static RadioButton SearchForCheckedRadioButton(Form form)
+        public static DifficultyEnum GetSelectedDifficulty(Form form)
         {
             foreach (var item in form.Controls)
             {
@@ -16,9 +17,22 @@ namespace CompleteImageGameApp.AppLogic
                 {
                     RadioButton rButton = item as RadioButton;
                     if (rButton.Checked)
-                        return rButton;
+                        return (DifficultyEnum)rButton.Tag;
                 }
             }
+            return DifficultyEnum.Medium;
+        }
+        public static ChooseDifficultyForm StartGame(Panel panel, ChooseDifficultyForm form)
+        {
+            form = new ChooseDifficultyForm();
+            form.TopLevel = false;
+            panel.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panel.Controls.Add(form);
+            form.BringToFront();
+            form.Show();
+            return form;
         }
     }
 }
