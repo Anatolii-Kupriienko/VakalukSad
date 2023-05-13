@@ -54,6 +54,7 @@
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(200, 100);
             mainPanel.TabIndex = 1;
+            mainPanel.ControlAdded += mainPanel_ControlAdded;
             mainPanel.ControlRemoved += mainPanel_ControlRemoved;
             // 
             // exitButton

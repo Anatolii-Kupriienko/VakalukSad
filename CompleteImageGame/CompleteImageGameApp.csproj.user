@@ -4,6 +4,9 @@
     <Compile Update="Forms\ChooseLevelAndDifficultyForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

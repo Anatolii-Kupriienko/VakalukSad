@@ -158,7 +158,7 @@
             fourthLevelPB.Location = new Point(448, 10);
             fourthLevelPB.Name = "fourthLevelPB";
             fourthLevelPB.Size = new Size(120, 120);
-            fourthLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
+            fourthLevelPB.SizeMode = PictureBoxSizeMode.Zoom;
             fourthLevelPB.TabIndex = 12;
             fourthLevelPB.TabStop = false;
             fourthLevelPB.Tag = "3";
@@ -171,7 +171,7 @@
             thirdLevelPB.Location = new Point(308, 10);
             thirdLevelPB.Name = "thirdLevelPB";
             thirdLevelPB.Size = new Size(120, 120);
-            thirdLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
+            thirdLevelPB.SizeMode = PictureBoxSizeMode.Zoom;
             thirdLevelPB.TabIndex = 11;
             thirdLevelPB.TabStop = false;
             thirdLevelPB.Tag = "2";

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CompleteImageGameApp.AppLogic
 {
@@ -23,7 +24,7 @@ namespace CompleteImageGameApp.AppLogic
             }
             return DifficultyEnum.Medium;
         }
-        public static ChooseLevelAndDifficultyForm StartGame(Panel panel, ChooseLevelAndDifficultyForm form)
+        public static ChooseLevelAndDifficultyForm LoadLevelSelectionForm(Panel panel, ChooseLevelAndDifficultyForm form)
         {
             form = new ChooseLevelAndDifficultyForm();
             form.TopLevel = false;
@@ -37,13 +38,29 @@ namespace CompleteImageGameApp.AppLogic
         }
         public static void ActivatePbButton(PictureBox lastSelected, PictureBox sender)
         {
-            var selectedPB = sender;
             lastSelected.Size = new Size(120, 120);
             lastSelected.BorderStyle = BorderStyle.None;
             lastSelected.Location = new Point(lastSelected.Location.X + 10, lastSelected.Location.Y + 5);
-            selectedPB.Size = new Size(140, 140);
-            selectedPB.BorderStyle = BorderStyle.FixedSingle;
-            selectedPB.Location = new Point(selectedPB.Location.X - 10, selectedPB.Location.Y - 5);
+            sender.Size = new Size(140, 140);
+            sender.BorderStyle = BorderStyle.FixedSingle;
+            sender.Location = new Point(sender.Location.X - 10, sender.Location.Y - 5);
+        }
+        public static void ActivatePbButton(PictureBox sender)
+        {
+            sender.Size = new Size(140, 140);
+            sender.BorderStyle = BorderStyle.FixedSingle;
+            sender.Location = new Point(sender.Location.X - 10, sender.Location.Y - 5);
+        }
+        public static GameForm LoadGameForm(ChooseLevelAndDifficultyForm form)
+        {
+            GameForm game = new(MainForm.chosenDifficulty, MainForm.chosenImage);
+            game.TopLevel = false;
+            game.Dock = DockStyle.Fill;
+            game.FormBorderStyle = FormBorderStyle.None;
+            form.Parent.Controls.Add(game);
+            game.BringToFront();
+            game.Show();
+            return game;
         }
     }
 }

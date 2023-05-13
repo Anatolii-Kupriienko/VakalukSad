@@ -26,15 +26,10 @@ namespace CompleteImageGameApp.Forms
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            chooseLevelAndDifficultyForm = GameSetup.StartGame(mainPanel, chooseLevelAndDifficultyForm);
+            chooseLevelAndDifficultyForm = GameSetup.LoadLevelSelectionForm(mainPanel, chooseLevelAndDifficultyForm);
             activeForm = chooseLevelAndDifficultyForm;
-            this.Text = chooseLevelAndDifficultyForm.Text;
+            this.MinimumSize = new Size(880, 400);
             exitButton.BringToFront();
-            if (this.Size.Width < 870 || this.Size.Height < 300)
-            {
-                this.Size = new Size(870, 300);
-            }
-            this.MinimumSize = new Size(870, 300);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -44,17 +39,24 @@ namespace CompleteImageGameApp.Forms
                 this.Close();
             }
             activeForm.Close();
+           
             mainPanel.Dock = DockStyle.None;
             activeForm = this;
         }
 
         private void mainPanel_ControlRemoved(object sender, ControlEventArgs e)
         {
-            if (activeForm == this)
-            {
-                mainPanel.Hide();
+            if(!mainPanel.Contains(activeForm))
                 this.Text = "Main menu";
-            }
+            exitButton.BringToFront();
+
+        }
+
+        private void mainPanel_ControlAdded(object sender, ControlEventArgs e)
+        {
+            if (e.Control is Form)
+                activeForm = (Form)e.Control;
+            this.Text = e.Control.Text;
         }
     }
 }

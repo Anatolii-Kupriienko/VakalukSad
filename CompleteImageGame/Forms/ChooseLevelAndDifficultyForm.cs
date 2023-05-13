@@ -19,9 +19,7 @@ namespace CompleteImageGameApp.Forms
         {
             InitializeComponent();
             lastSelected = firstLevelPB;
-            lastSelected.Size = new Size(140, 140);
-            lastSelected.BorderStyle = BorderStyle.FixedSingle;
-            lastSelected.Location = new Point(lastSelected.Location.X - 10, lastSelected.Location.Y - 5);
+            GameSetup.ActivatePbButton(lastSelected);
         }
 
         private void playButton_Click(object sender, EventArgs e)
@@ -33,14 +31,15 @@ namespace CompleteImageGameApp.Forms
                 lastSelected.Image = LevelsImages.Images[random.Next(5)];
             }
             MainForm.chosenImage = lastSelected.Image;
+            GameSetup.LoadGameForm(this);
+            this.Parent.Parent.MinimumSize = new Size(935, 400);
+            this.Close();
         }
 
         private void LevelsPictureBoxes_Click(object sender, EventArgs e)
         {
-            
-            var selectedPB = (PictureBox)sender;
-            GameSetup.ActivatePbButton(lastSelected, selectedPB);
-            lastSelected = selectedPB;
+            GameSetup.ActivatePbButton(lastSelected, (PictureBox)sender);
+            lastSelected = (PictureBox)sender;
         }
     }
 }
