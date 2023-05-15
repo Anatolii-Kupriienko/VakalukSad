@@ -27,10 +27,12 @@ namespace CompleteImageGameApp.Forms
             MainForm.chosenDifficulty = GameSetup.GetSelectedDifficulty(this);
             if (lastSelected.Tag == "Random")
             {
-                Random random = new();
-                lastSelected.Image = LevelsImages.Images[random.Next(5)];
+                lastSelected.Image = GameSetup.GetRandomImage(LevelsImages);
+                lastSelected.Tag = lastSelected.Image.Tag;
             }
             MainForm.chosenImage = lastSelected.Image;
+            int tag = Convert.ToInt32(lastSelected.Tag);
+            MainForm.completedImage = CompletedImages.Images[tag];
             GameSetup.LoadGameForm(this);
             this.Parent.Parent.MinimumSize = new Size(935, 400);
             this.Close();

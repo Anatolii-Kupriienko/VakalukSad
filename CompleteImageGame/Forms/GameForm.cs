@@ -17,7 +17,7 @@ namespace CompleteImageGameApp.Forms
         GameLogic game;
         Image helpImage, _img;
         int w, h, timeCounter;
-        public GameForm(DifficultyEnum difficulty, Image image)
+        public GameForm(DifficultyEnum difficulty, Image image )
         {
             InitializeComponent();
             if (difficulty != DifficultyEnum.Hard)

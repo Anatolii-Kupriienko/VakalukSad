@@ -42,6 +42,7 @@
             thirdLevelPB = new PictureBox();
             fifthLevelPB = new PictureBox();
             randomLevelPB = new PictureBox();
+            CompletedImages = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)firstLevelPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)secondLevelPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fourthLevelPB).BeginInit();
@@ -132,8 +133,8 @@
             LevelsImages.ColorDepth = ColorDepth.Depth16Bit;
             LevelsImages.ImageStream = (ImageListStreamer)resources.GetObject("LevelsImages.ImageStream");
             LevelsImages.TransparentColor = Color.Transparent;
-            LevelsImages.Images.SetKeyName(0, "FB_IMG_1676803167228.jpg");
-            LevelsImages.Images.SetKeyName(1, "gachimuchi.jpg");
+            LevelsImages.Images.SetKeyName(0, "image3.jpg");
+            LevelsImages.Images.SetKeyName(1, "image5.jpg");
             LevelsImages.Images.SetKeyName(2, "image1.jpg");
             LevelsImages.Images.SetKeyName(3, "image2.jpg");
             LevelsImages.Images.SetKeyName(4, "image4.jpg");
@@ -158,7 +159,7 @@
             fourthLevelPB.Location = new Point(448, 10);
             fourthLevelPB.Name = "fourthLevelPB";
             fourthLevelPB.Size = new Size(120, 120);
-            fourthLevelPB.SizeMode = PictureBoxSizeMode.Zoom;
+            fourthLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
             fourthLevelPB.TabIndex = 12;
             fourthLevelPB.TabStop = false;
             fourthLevelPB.Tag = "3";
@@ -203,6 +204,17 @@
             randomLevelPB.Tag = "Random";
             randomLevelPB.Click += LevelsPictureBoxes_Click;
             // 
+            // CompletedImages
+            // 
+            CompletedImages.ColorDepth = ColorDepth.Depth16Bit;
+            CompletedImages.ImageStream = (ImageListStreamer)resources.GetObject("CompletedImages.ImageStream");
+            CompletedImages.TransparentColor = Color.Transparent;
+            CompletedImages.Images.SetKeyName(0, "image3_completed.jpg");
+            CompletedImages.Images.SetKeyName(1, "image5_completed.jpg");
+            CompletedImages.Images.SetKeyName(2, "image1_completed.jpg");
+            CompletedImages.Images.SetKeyName(3, "image2_completed.jpg");
+            CompletedImages.Images.SetKeyName(4, "image4_completed.jpg");
+            // 
             // ChooseLevelAndDifficultyForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -246,5 +258,6 @@
         private PictureBox thirdLevelPB;
         private PictureBox fifthLevelPB;
         private PictureBox randomLevelPB;
+        private ImageList CompletedImages;
     }
 }

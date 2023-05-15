@@ -18,15 +18,13 @@ namespace CompleteImageGameApp.Forms
     public partial class MainForm : Form
     {
         public static DifficultyEnum chosenDifficulty;
-        public static Image chosenImage;
+        public static Image chosenImage, completedImage;
         public ChooseLevelAndDifficultyForm chooseLevelAndDifficultyForm;
         public Form activeForm;
-        public SoundPlayer player = new SoundPlayer(@"C:\Users\Пакет\Downloads\bgMusic_track1_new.wav");
         public MainForm()
         {
             InitializeComponent();
             activeForm = this;
-            player.Play();
         }
 
         private void startButton_Click(object sender, EventArgs e)

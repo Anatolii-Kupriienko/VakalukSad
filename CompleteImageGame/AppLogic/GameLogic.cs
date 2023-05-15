@@ -191,7 +191,8 @@ namespace CompleteImageGameApp.AppLogic
                 label.Hide();
             }
             var completedImagePB = new PictureBox();
-            completedImagePB.Image = _mainImage;
+            completedImagePB.Image = MainForm.completedImage;
+            completedImagePB.SizeMode = PictureBoxSizeMode.StretchImage;
             _panel1.Controls.Add(completedImagePB);
             completedImagePB.Size = new Size(400, 300);
             completedImagePB.Show();

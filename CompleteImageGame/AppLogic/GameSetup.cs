@@ -51,7 +51,7 @@ namespace CompleteImageGameApp.AppLogic
             sender.BorderStyle = BorderStyle.FixedSingle;
             sender.Location = new Point(sender.Location.X - 10, sender.Location.Y - 5);
         }
-        public static GameForm LoadGameForm(ChooseLevelAndDifficultyForm form)
+        public static GameForm LoadGameForm(ChooseLevelAndDifficultyForm form )
         {
             GameForm game = new(MainForm.chosenDifficulty, MainForm.chosenImage);
             game.TopLevel = false;
@@ -61,6 +61,15 @@ namespace CompleteImageGameApp.AppLogic
             game.BringToFront();
             game.Show();
             return game;
+        }
+        public static Image GetRandomImage(ImageList imageList)
+        {
+            Random random = new();
+            int temp = random.Next(5);
+            var randomImage = imageList.Images[temp];
+            randomImage.Tag = temp;
+            return randomImage;
+
         }
     }
 }
