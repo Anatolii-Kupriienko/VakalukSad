@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using Microsoft.VisualBasic.Devices;
+using Microsoft.VisualBasic;
 
 namespace CompleteImageGameApp.Forms
 {
@@ -18,10 +21,12 @@ namespace CompleteImageGameApp.Forms
         public static Image chosenImage;
         public ChooseLevelAndDifficultyForm chooseLevelAndDifficultyForm;
         public Form activeForm;
+        public SoundPlayer player = new SoundPlayer(@"C:\Users\Пакет\Downloads\bgMusic_track1_new.wav");
         public MainForm()
         {
             InitializeComponent();
             activeForm = this;
+            player.Play();
         }
 
         private void startButton_Click(object sender, EventArgs e)
