@@ -55,10 +55,12 @@
             // 
             chooseDifficultyLabel.Anchor = AnchorStyles.Bottom;
             chooseDifficultyLabel.AutoSize = true;
-            chooseDifficultyLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            chooseDifficultyLabel.Location = new Point(169, 278);
+            chooseDifficultyLabel.BackColor = Color.Transparent;
+            chooseDifficultyLabel.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
+            chooseDifficultyLabel.ForeColor = Color.Crimson;
+            chooseDifficultyLabel.Location = new Point(225, 279);
             chooseDifficultyLabel.Name = "chooseDifficultyLabel";
-            chooseDifficultyLabel.Size = new Size(215, 25);
+            chooseDifficultyLabel.Size = new Size(236, 23);
             chooseDifficultyLabel.TabIndex = 2;
             chooseDifficultyLabel.Text = "Оберіть складність гри:";
             // 
@@ -66,62 +68,70 @@
             // 
             HardDifficultyRadioButton.Anchor = AnchorStyles.Bottom;
             HardDifficultyRadioButton.AutoSize = true;
-            HardDifficultyRadioButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            HardDifficultyRadioButton.Location = new Point(612, 278);
+            HardDifficultyRadioButton.BackColor = Color.Transparent;
+            HardDifficultyRadioButton.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
+            HardDifficultyRadioButton.ForeColor = Color.Crimson;
+            HardDifficultyRadioButton.Location = new Point(689, 279);
             HardDifficultyRadioButton.Name = "HardDifficultyRadioButton";
-            HardDifficultyRadioButton.Size = new Size(85, 29);
+            HardDifficultyRadioButton.Size = new Size(92, 27);
             HardDifficultyRadioButton.TabIndex = 7;
             HardDifficultyRadioButton.Tag = AppLogic.DifficultyEnum.Hard;
             HardDifficultyRadioButton.Text = "Важко";
-            HardDifficultyRadioButton.UseVisualStyleBackColor = true;
+            HardDifficultyRadioButton.UseVisualStyleBackColor = false;
             // 
             // MediumDifficultyRadioButton
             // 
             MediumDifficultyRadioButton.Anchor = AnchorStyles.Bottom;
             MediumDifficultyRadioButton.AutoSize = true;
+            MediumDifficultyRadioButton.BackColor = Color.Transparent;
             MediumDifficultyRadioButton.Checked = true;
-            MediumDifficultyRadioButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            MediumDifficultyRadioButton.Location = new Point(476, 278);
+            MediumDifficultyRadioButton.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
+            MediumDifficultyRadioButton.ForeColor = Color.Crimson;
+            MediumDifficultyRadioButton.Location = new Point(553, 279);
             MediumDifficultyRadioButton.Name = "MediumDifficultyRadioButton";
-            MediumDifficultyRadioButton.Size = new Size(130, 29);
+            MediumDifficultyRadioButton.Size = new Size(134, 27);
             MediumDifficultyRadioButton.TabIndex = 6;
             MediumDifficultyRadioButton.TabStop = true;
             MediumDifficultyRadioButton.Tag = AppLogic.DifficultyEnum.Medium;
             MediumDifficultyRadioButton.Text = "Нормально";
-            MediumDifficultyRadioButton.UseVisualStyleBackColor = true;
+            MediumDifficultyRadioButton.UseVisualStyleBackColor = false;
             // 
             // EasyDifficultyRadioButton
             // 
             EasyDifficultyRadioButton.Anchor = AnchorStyles.Bottom;
             EasyDifficultyRadioButton.AutoSize = true;
-            EasyDifficultyRadioButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            EasyDifficultyRadioButton.Location = new Point(390, 278);
+            EasyDifficultyRadioButton.BackColor = Color.Transparent;
+            EasyDifficultyRadioButton.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
+            EasyDifficultyRadioButton.ForeColor = Color.Crimson;
+            EasyDifficultyRadioButton.Location = new Point(467, 279);
             EasyDifficultyRadioButton.Name = "EasyDifficultyRadioButton";
-            EasyDifficultyRadioButton.Size = new Size(80, 29);
+            EasyDifficultyRadioButton.Size = new Size(81, 27);
             EasyDifficultyRadioButton.TabIndex = 5;
             EasyDifficultyRadioButton.Tag = AppLogic.DifficultyEnum.Easy;
             EasyDifficultyRadioButton.Text = "Легко";
-            EasyDifficultyRadioButton.UseVisualStyleBackColor = true;
+            EasyDifficultyRadioButton.UseVisualStyleBackColor = false;
             // 
             // playButton
             // 
             playButton.Anchor = AnchorStyles.Bottom;
-            playButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            playButton.Location = new Point(358, 313);
+            playButton.BackColor = Color.Turquoise;
+            playButton.Font = new Font("Algerian", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            playButton.ForeColor = Color.Indigo;
+            playButton.Location = new Point(439, 312);
             playButton.Name = "playButton";
             playButton.Size = new Size(178, 57);
             playButton.TabIndex = 8;
             playButton.Text = "ГРАТИ";
-            playButton.UseVisualStyleBackColor = true;
+            playButton.UseVisualStyleBackColor = false;
             playButton.Click += playButton_Click;
             // 
             // firstLevelPB
             // 
             firstLevelPB.Anchor = AnchorStyles.Top;
             firstLevelPB.Image = (Image)resources.GetObject("firstLevelPB.Image");
-            firstLevelPB.Location = new Point(28, 10);
+            firstLevelPB.Location = new Point(12, 10);
             firstLevelPB.Name = "firstLevelPB";
-            firstLevelPB.Size = new Size(120, 120);
+            firstLevelPB.Size = new Size(150, 150);
             firstLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
             firstLevelPB.TabIndex = 9;
             firstLevelPB.TabStop = false;
@@ -143,9 +153,9 @@
             // 
             secondLevelPB.Anchor = AnchorStyles.Top;
             secondLevelPB.Image = (Image)resources.GetObject("secondLevelPB.Image");
-            secondLevelPB.Location = new Point(168, 10);
+            secondLevelPB.Location = new Point(183, 10);
             secondLevelPB.Name = "secondLevelPB";
-            secondLevelPB.Size = new Size(120, 120);
+            secondLevelPB.Size = new Size(150, 150);
             secondLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
             secondLevelPB.TabIndex = 10;
             secondLevelPB.TabStop = false;
@@ -156,9 +166,9 @@
             // 
             fourthLevelPB.Anchor = AnchorStyles.Top;
             fourthLevelPB.Image = (Image)resources.GetObject("fourthLevelPB.Image");
-            fourthLevelPB.Location = new Point(448, 10);
+            fourthLevelPB.Location = new Point(689, 10);
             fourthLevelPB.Name = "fourthLevelPB";
-            fourthLevelPB.Size = new Size(120, 120);
+            fourthLevelPB.Size = new Size(150, 150);
             fourthLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
             fourthLevelPB.TabIndex = 12;
             fourthLevelPB.TabStop = false;
@@ -169,9 +179,9 @@
             // 
             thirdLevelPB.Anchor = AnchorStyles.Top;
             thirdLevelPB.Image = (Image)resources.GetObject("thirdLevelPB.Image");
-            thirdLevelPB.Location = new Point(308, 10);
+            thirdLevelPB.Location = new Point(348, 10);
             thirdLevelPB.Name = "thirdLevelPB";
-            thirdLevelPB.Size = new Size(120, 120);
+            thirdLevelPB.Size = new Size(150, 150);
             thirdLevelPB.SizeMode = PictureBoxSizeMode.Zoom;
             thirdLevelPB.TabIndex = 11;
             thirdLevelPB.TabStop = false;
@@ -182,9 +192,9 @@
             // 
             fifthLevelPB.Anchor = AnchorStyles.Top;
             fifthLevelPB.Image = (Image)resources.GetObject("fifthLevelPB.Image");
-            fifthLevelPB.Location = new Point(588, 10);
+            fifthLevelPB.Location = new Point(518, 12);
             fifthLevelPB.Name = "fifthLevelPB";
-            fifthLevelPB.Size = new Size(120, 120);
+            fifthLevelPB.Size = new Size(150, 150);
             fifthLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
             fifthLevelPB.TabIndex = 13;
             fifthLevelPB.TabStop = false;
@@ -195,9 +205,9 @@
             // 
             randomLevelPB.Anchor = AnchorStyles.Top;
             randomLevelPB.Image = (Image)resources.GetObject("randomLevelPB.Image");
-            randomLevelPB.Location = new Point(728, 10);
+            randomLevelPB.Location = new Point(852, 12);
             randomLevelPB.Name = "randomLevelPB";
-            randomLevelPB.Size = new Size(120, 120);
+            randomLevelPB.Size = new Size(150, 150);
             randomLevelPB.SizeMode = PictureBoxSizeMode.StretchImage;
             randomLevelPB.TabIndex = 14;
             randomLevelPB.TabStop = false;
@@ -219,7 +229,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(860, 382);
+            BackColor = Color.Salmon;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1014, 381);
             Controls.Add(randomLevelPB);
             Controls.Add(fifthLevelPB);
             Controls.Add(fourthLevelPB);
@@ -231,9 +243,9 @@
             Controls.Add(MediumDifficultyRadioButton);
             Controls.Add(EasyDifficultyRadioButton);
             Controls.Add(chooseDifficultyLabel);
-            MinimumSize = new Size(870, 300);
+            MinimumSize = new Size(1030, 420);
             Name = "ChooseLevelAndDifficultyForm";
-            Text = "ChooseLevelAndDifficultyForm";
+            Text = "Choose Image";
             ((System.ComponentModel.ISupportInitialize)firstLevelPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)secondLevelPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)fourthLevelPB).EndInit();

@@ -17,13 +17,13 @@ namespace CompleteImageGameApp.Forms
         GameLogic game;
         Image helpImage, _img;
         int w, h, timeCounter;
-        public GameForm(DifficultyEnum difficulty, Image image )
+        public GameForm(DifficultyEnum difficulty, Image image)
         {
             InitializeComponent();
             if (difficulty != DifficultyEnum.Hard)
             {
                 _img = image;
-                helpImage = Image.FromFile("HelpImage.png");
+                helpImage = Image.FromFile("peekImage.png");
                 helperImagePictureBox.Image = helpImage;
             }
             else
@@ -38,18 +38,18 @@ namespace CompleteImageGameApp.Forms
         {
             if (difficulty == DifficultyEnum.Easy)
             {
-                w = 133;
-                h = 100;
+                w = 200;
+                h = 200;
             }
             else if (difficulty == DifficultyEnum.Medium)
             {
-                w = 100;
-                h = 100;
+                w = 150;
+                h = 200;
             }
             else
             {
-                w = 100;
-                h = 75;
+                w = 150;
+                h = 150;
             }
         }
 

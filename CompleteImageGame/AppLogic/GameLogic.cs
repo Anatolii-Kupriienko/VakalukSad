@@ -26,7 +26,7 @@ namespace CompleteImageGameApp.AppLogic
             _game = game;
             _panel1 = panel1;
             _diff = diff;
-            _mainImage = new Bitmap(img, new Size(400, 300));
+            _mainImage = new Bitmap(img, new Size(600, 600));
             foreach (var item in _piecesList)
             {
                 _piecesList.Remove(item);
@@ -130,7 +130,7 @@ namespace CompleteImageGameApp.AppLogic
                 }
                 _piecesList.Add(cropped_image);
                 x += _w;
-                if (x == 400|| x==399)
+                if (x == 600|| x==399)
                 {
                     x = 0;
                     y += _h;
@@ -194,7 +194,7 @@ namespace CompleteImageGameApp.AppLogic
             completedImagePB.Image = MainForm.completedImage;
             completedImagePB.SizeMode = PictureBoxSizeMode.StretchImage;
             _panel1.Controls.Add(completedImagePB);
-            completedImagePB.Size = new Size(400, 300);
+            completedImagePB.Size = new Size(600, 600);
             completedImagePB.Show();
             completedImagePB.BringToFront();
         }
@@ -221,7 +221,7 @@ namespace CompleteImageGameApp.AppLogic
             {
                 _game.Text = "Image Completed";
                 DisableAllTiles();
-                MessageBox.Show($"Так тримати College Boy\nВаш {GetTime()}", "Good job College Boy",
+                MessageBox.Show($"Так тримати College Boy\nВаш {GetTime()}, Size = {_game.Size}", "Good job College Boy",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }

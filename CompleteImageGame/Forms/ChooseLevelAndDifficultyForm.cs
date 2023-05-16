@@ -20,6 +20,7 @@ namespace CompleteImageGameApp.Forms
             InitializeComponent();
             lastSelected = firstLevelPB;
             GameSetup.ActivatePbButton(lastSelected);
+            this.AcceptButton = playButton;
         }
 
         private void playButton_Click(object sender, EventArgs e)
@@ -33,8 +34,8 @@ namespace CompleteImageGameApp.Forms
             MainForm.chosenImage = lastSelected.Image;
             int tag = Convert.ToInt32(lastSelected.Tag);
             MainForm.completedImage = CompletedImages.Images[tag];
+            this.Parent.Parent.MinimumSize = new Size(1340, 770);
             GameSetup.LoadGameForm(this);
-            this.Parent.Parent.MinimumSize = new Size(935, 400);
             this.Close();
         }
 

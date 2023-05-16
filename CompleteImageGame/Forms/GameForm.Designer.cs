@@ -40,7 +40,7 @@
             // 
             panel1.Location = new Point(33, 33);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 300);
+            panel1.Size = new Size(600, 600);
             panel1.TabIndex = 0;
             // 
             // Timer
@@ -51,16 +51,18 @@
             // TimeLabel
             // 
             TimeLabel.AutoSize = true;
-            TimeLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TimeLabel.BackColor = Color.Transparent;
+            TimeLabel.Font = new Font("Verdana", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            TimeLabel.ForeColor = Color.MintCream;
             TimeLabel.Location = new Point(12, 9);
             TimeLabel.Name = "TimeLabel";
-            TimeLabel.Size = new Size(52, 21);
+            TimeLabel.Size = new Size(62, 18);
             TimeLabel.TabIndex = 1;
             TimeLabel.Text = "Час: 0";
             // 
             // helperImagePictureBox
             // 
-            helperImagePictureBox.Location = new Point(435, 10);
+            helperImagePictureBox.Location = new Point(637, 9);
             helperImagePictureBox.Name = "helperImagePictureBox";
             helperImagePictureBox.Size = new Size(60, 20);
             helperImagePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -73,12 +75,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1028, 384);
+            BackColor = Color.RosyBrown;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1324, 702);
             Controls.Add(helperImagePictureBox);
             Controls.Add(TimeLabel);
             Controls.Add(panel1);
+            MinimumSize = new Size(1340, 740);
             Name = "GameForm";
-            Text = "GameForm";
+            Text = "Complete The Image";
             TextChanged += GameForm_TextChanged;
             ((System.ComponentModel.ISupportInitialize)helperImagePictureBox).EndInit();
             ResumeLayout(false);

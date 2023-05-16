@@ -25,14 +25,17 @@ namespace CompleteImageGameApp.Forms
         {
             InitializeComponent();
             activeForm = this;
+            this.AcceptButton = startButton;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
             chooseLevelAndDifficultyForm = GameSetup.LoadLevelSelectionForm(mainPanel, chooseLevelAndDifficultyForm);
             activeForm = chooseLevelAndDifficultyForm;
-            this.MinimumSize = new Size(880, 400);
+            this.MinimumSize = new Size(1030, 470);
             exitButton.BringToFront();
+            fullScreenButton.BringToFront();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -42,17 +45,19 @@ namespace CompleteImageGameApp.Forms
                 this.Close();
             }
             activeForm.Close();
-           
-            mainPanel.Dock = DockStyle.None;
+            mainPanel.Dock = DockStyle.Bottom;
             activeForm = this;
         }
 
         private void mainPanel_ControlRemoved(object sender, ControlEventArgs e)
         {
-            if(!mainPanel.Contains(activeForm))
+            if (!mainPanel.Contains(activeForm))
+            {
                 this.Text = "Main menu";
+                this.MinimumSize = new Size(400, 400);
+            }
             exitButton.BringToFront();
-
+            fullScreenButton.BringToFront();
         }
 
         private void mainPanel_ControlAdded(object sender, ControlEventArgs e)
@@ -60,6 +65,24 @@ namespace CompleteImageGameApp.Forms
             if (e.Control is Form)
                 activeForm = (Form)e.Control;
             this.Text = e.Control.Text;
+        }
+
+        private void fullScreenButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                fullScreenButton.Text = "Вийти з повного екрану";
+                this.WindowState = FormWindowState.Maximized;
+                this.FormBorderStyle = FormBorderStyle.None;
+                fullScreenButton.Location = new Point(8, mainPanel.Height - fullScreenButton.Height-9);
+            }
+            else
+            {
+                fullScreenButton.Text = "Повний екран";
+                this.WindowState = FormWindowState.Normal;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                fullScreenButton.Location = new Point(0, mainPanel.Height - fullScreenButton.Height);
+            }
         }
     }
 }

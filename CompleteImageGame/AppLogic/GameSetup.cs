@@ -38,16 +38,16 @@ namespace CompleteImageGameApp.AppLogic
         }
         public static void ActivatePbButton(PictureBox lastSelected, PictureBox sender)
         {
-            lastSelected.Size = new Size(120, 120);
+            lastSelected.Size = new Size(150, 150);
             lastSelected.BorderStyle = BorderStyle.None;
             lastSelected.Location = new Point(lastSelected.Location.X + 10, lastSelected.Location.Y + 5);
-            sender.Size = new Size(140, 140);
+            sender.Size = new Size(170, 170);
             sender.BorderStyle = BorderStyle.FixedSingle;
             sender.Location = new Point(sender.Location.X - 10, sender.Location.Y - 5);
         }
         public static void ActivatePbButton(PictureBox sender)
         {
-            sender.Size = new Size(140, 140);
+            sender.Size = new Size(170, 170);
             sender.BorderStyle = BorderStyle.FixedSingle;
             sender.Location = new Point(sender.Location.X - 10, sender.Location.Y - 5);
         }

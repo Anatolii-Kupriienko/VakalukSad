@@ -30,6 +30,7 @@
         {
             startButton = new Button();
             mainPanel = new Panel();
+            fullScreenButton = new Button();
             exitButton = new Button();
             mainPanel.SuspendLayout();
             SuspendLayout();
@@ -37,48 +38,72 @@
             // startButton
             // 
             startButton.Anchor = AnchorStyles.None;
+            startButton.BackColor = Color.Bisque;
             startButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            startButton.Location = new Point(381, 197);
+            startButton.ForeColor = Color.HotPink;
+            startButton.ImeMode = ImeMode.NoControl;
+            startButton.Location = new Point(209, 131);
             startButton.Name = "startButton";
-            startButton.Size = new Size(112, 43);
+            startButton.Size = new Size(174, 79);
             startButton.TabIndex = 0;
             startButton.Text = "Почати";
-            startButton.UseVisualStyleBackColor = true;
+            startButton.UseVisualStyleBackColor = false;
             startButton.Click += startButton_Click;
             // 
             // mainPanel
             // 
-            mainPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            mainPanel.BackColor = Color.Transparent;
+            mainPanel.Controls.Add(fullScreenButton);
             mainPanel.Controls.Add(exitButton);
-            mainPanel.Location = new Point(692, 373);
+            mainPanel.Dock = DockStyle.Bottom;
+            mainPanel.Location = new Point(0, 261);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(200, 100);
+            mainPanel.Size = new Size(616, 100);
             mainPanel.TabIndex = 1;
             mainPanel.ControlAdded += mainPanel_ControlAdded;
             mainPanel.ControlRemoved += mainPanel_ControlRemoved;
             // 
+            // fullScreenButton
+            // 
+            fullScreenButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            fullScreenButton.BackColor = Color.PaleGreen;
+            fullScreenButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            fullScreenButton.Location = new Point(0, 49);
+            fullScreenButton.Name = "fullScreenButton";
+            fullScreenButton.Size = new Size(134, 51);
+            fullScreenButton.TabIndex = 2;
+            fullScreenButton.Text = "Вийти з повного екрану";
+            fullScreenButton.UseVisualStyleBackColor = false;
+            fullScreenButton.Click += fullScreenButton_Click;
+            // 
             // exitButton
             // 
             exitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            exitButton.BackColor = Color.IndianRed;
             exitButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            exitButton.Location = new Point(75, 42);
+            exitButton.ImeMode = ImeMode.NoControl;
+            exitButton.Location = new Point(491, 42);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(112, 43);
             exitButton.TabIndex = 1;
             exitButton.Text = "Вийти";
-            exitButton.UseVisualStyleBackColor = true;
+            exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(891, 470);
+            BackColor = Color.Salmon;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(616, 361);
             Controls.Add(mainPanel);
             Controls.Add(startButton);
             MinimumSize = new Size(400, 400);
             Name = "MainForm";
-            Text = "MainForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Main Menu";
+            WindowState = FormWindowState.Maximized;
             mainPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -88,5 +113,6 @@
         private Button startButton;
         private Panel mainPanel;
         private Button exitButton;
+        private Button fullScreenButton;
     }
 }
