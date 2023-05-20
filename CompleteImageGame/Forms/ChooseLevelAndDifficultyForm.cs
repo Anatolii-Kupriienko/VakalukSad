@@ -32,8 +32,15 @@ namespace CompleteImageGameApp.Forms
                 lastSelected.Tag = lastSelected.Image.Tag;
             }
             MainForm.chosenImage = lastSelected.Image;
-            int tag = Convert.ToInt32(lastSelected.Tag);
-            MainForm.completedImage = CompletedImages.Images[tag];
+            if (lastSelected.Tag == "UserChoice")
+            {
+                MainForm.completedImage = MainForm.chosenImage;
+            }
+            else
+            {
+                int tag = Convert.ToInt32(lastSelected.Tag);
+                MainForm.completedImage = CompletedImages.Images[tag];
+            }
             this.Parent.Parent.MinimumSize = new Size(1340, 770);
             GameSetup.LoadGameForm(this);
             this.Close();
@@ -43,6 +50,19 @@ namespace CompleteImageGameApp.Forms
         {
             GameSetup.ActivatePbButton(lastSelected, (PictureBox)sender);
             lastSelected = (PictureBox)sender;
+        }
+
+        private void uploadImagePictureBox_Click(object sender, EventArgs e)
+        {
+            GameSetup.ActivatePbButton(lastSelected, (PictureBox)sender);
+            lastSelected = (PictureBox)sender;
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.Filter = "Image Files Only | *.jpg; *.jpeg; *.png";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                lastSelected.Image = Image.FromFile(openFileDialog.FileName);
+                uploadImagePictureBox.Image = Image.FromFile(openFileDialog.FileName);
+            }
         }
     }
 }

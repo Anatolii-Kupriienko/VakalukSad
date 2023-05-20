@@ -97,7 +97,7 @@
             // pausedLabel
             // 
             pausedLabel.AutoSize = true;
-            pausedLabel.BackColor = Color.Transparent;
+            pausedLabel.BackColor = Color.DimGray;
             pausedLabel.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
             pausedLabel.ForeColor = Color.LightGray;
             pausedLabel.Location = new Point(593, 324);

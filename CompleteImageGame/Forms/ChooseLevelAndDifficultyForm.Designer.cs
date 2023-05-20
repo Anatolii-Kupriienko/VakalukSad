@@ -43,12 +43,14 @@
             fifthLevelPB = new PictureBox();
             randomLevelPB = new PictureBox();
             CompletedImages = new ImageList(components);
+            uploadImagePictureBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)firstLevelPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)secondLevelPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fourthLevelPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)thirdLevelPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fifthLevelPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)randomLevelPB).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)uploadImagePictureBox).BeginInit();
             SuspendLayout();
             // 
             // chooseDifficultyLabel
@@ -58,7 +60,7 @@
             chooseDifficultyLabel.BackColor = Color.Transparent;
             chooseDifficultyLabel.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
             chooseDifficultyLabel.ForeColor = Color.Crimson;
-            chooseDifficultyLabel.Location = new Point(225, 279);
+            chooseDifficultyLabel.Location = new Point(225, 335);
             chooseDifficultyLabel.Name = "chooseDifficultyLabel";
             chooseDifficultyLabel.Size = new Size(236, 23);
             chooseDifficultyLabel.TabIndex = 2;
@@ -71,7 +73,7 @@
             HardDifficultyRadioButton.BackColor = Color.Transparent;
             HardDifficultyRadioButton.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
             HardDifficultyRadioButton.ForeColor = Color.Crimson;
-            HardDifficultyRadioButton.Location = new Point(689, 279);
+            HardDifficultyRadioButton.Location = new Point(689, 335);
             HardDifficultyRadioButton.Name = "HardDifficultyRadioButton";
             HardDifficultyRadioButton.Size = new Size(92, 27);
             HardDifficultyRadioButton.TabIndex = 7;
@@ -87,7 +89,7 @@
             MediumDifficultyRadioButton.Checked = true;
             MediumDifficultyRadioButton.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
             MediumDifficultyRadioButton.ForeColor = Color.Crimson;
-            MediumDifficultyRadioButton.Location = new Point(553, 279);
+            MediumDifficultyRadioButton.Location = new Point(553, 335);
             MediumDifficultyRadioButton.Name = "MediumDifficultyRadioButton";
             MediumDifficultyRadioButton.Size = new Size(134, 27);
             MediumDifficultyRadioButton.TabIndex = 6;
@@ -103,7 +105,7 @@
             EasyDifficultyRadioButton.BackColor = Color.Transparent;
             EasyDifficultyRadioButton.Font = new Font("Century Schoolbook", 14.25F, FontStyle.Italic, GraphicsUnit.Point);
             EasyDifficultyRadioButton.ForeColor = Color.Crimson;
-            EasyDifficultyRadioButton.Location = new Point(467, 279);
+            EasyDifficultyRadioButton.Location = new Point(467, 335);
             EasyDifficultyRadioButton.Name = "EasyDifficultyRadioButton";
             EasyDifficultyRadioButton.Size = new Size(81, 27);
             EasyDifficultyRadioButton.TabIndex = 5;
@@ -117,7 +119,7 @@
             playButton.BackColor = Color.Turquoise;
             playButton.Font = new Font("Algerian", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             playButton.ForeColor = Color.Indigo;
-            playButton.Location = new Point(439, 312);
+            playButton.Location = new Point(439, 368);
             playButton.Name = "playButton";
             playButton.Size = new Size(178, 57);
             playButton.TabIndex = 8;
@@ -225,13 +227,27 @@
             CompletedImages.Images.SetKeyName(3, "image2_completed.jpg");
             CompletedImages.Images.SetKeyName(4, "image4_completed.jpg");
             // 
+            // uploadImagePictureBox
+            // 
+            uploadImagePictureBox.Anchor = AnchorStyles.Top;
+            uploadImagePictureBox.Image = (Image)resources.GetObject("uploadImagePictureBox.Image");
+            uploadImagePictureBox.Location = new Point(450, 179);
+            uploadImagePictureBox.Name = "uploadImagePictureBox";
+            uploadImagePictureBox.Size = new Size(150, 150);
+            uploadImagePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            uploadImagePictureBox.TabIndex = 15;
+            uploadImagePictureBox.TabStop = false;
+            uploadImagePictureBox.Tag = "UserChoice";
+            uploadImagePictureBox.Click += uploadImagePictureBox_Click;
+            // 
             // ChooseLevelAndDifficultyForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Salmon;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1014, 381);
+            ClientSize = new Size(1014, 437);
+            Controls.Add(uploadImagePictureBox);
             Controls.Add(randomLevelPB);
             Controls.Add(fifthLevelPB);
             Controls.Add(fourthLevelPB);
@@ -245,6 +261,7 @@
             Controls.Add(chooseDifficultyLabel);
             MinimumSize = new Size(1030, 420);
             Name = "ChooseLevelAndDifficultyForm";
+            Tag = "UserChoice";
             Text = "Choose Image";
             ((System.ComponentModel.ISupportInitialize)firstLevelPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)secondLevelPB).EndInit();
@@ -252,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)thirdLevelPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)fifthLevelPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)randomLevelPB).EndInit();
+            ((System.ComponentModel.ISupportInitialize)uploadImagePictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -271,5 +289,6 @@
         private PictureBox fifthLevelPB;
         private PictureBox randomLevelPB;
         private ImageList CompletedImages;
+        private PictureBox uploadImagePictureBox;
     }
 }
