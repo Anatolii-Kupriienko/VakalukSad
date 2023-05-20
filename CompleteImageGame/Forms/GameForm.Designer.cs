@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             panel1 = new Panel();
             Timer = new System.Windows.Forms.Timer(components);
             TimeLabel = new Label();
             helperImagePictureBox = new PictureBox();
+            pauseButton = new Button();
+            pauseButtonImages = new ImageList(components);
+            pausedLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)helperImagePictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -71,6 +75,38 @@
             helperImagePictureBox.SizeChanged += helperImagePictureBox_SizeChanged;
             helperImagePictureBox.Click += helperImagePictureBox_Click;
             // 
+            // pauseButton
+            // 
+            pauseButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pauseButton.BackgroundImageLayout = ImageLayout.Stretch;
+            pauseButton.Location = new Point(1270, 9);
+            pauseButton.Name = "pauseButton";
+            pauseButton.Size = new Size(40, 40);
+            pauseButton.TabIndex = 3;
+            pauseButton.UseVisualStyleBackColor = true;
+            pauseButton.Click += pauseButton_Click;
+            // 
+            // pauseButtonImages
+            // 
+            pauseButtonImages.ColorDepth = ColorDepth.Depth8Bit;
+            pauseButtonImages.ImageStream = (ImageListStreamer)resources.GetObject("pauseButtonImages.ImageStream");
+            pauseButtonImages.TransparentColor = Color.Transparent;
+            pauseButtonImages.Images.SetKeyName(0, "pause.png");
+            pauseButtonImages.Images.SetKeyName(1, "play.png");
+            // 
+            // pausedLabel
+            // 
+            pausedLabel.AutoSize = true;
+            pausedLabel.BackColor = Color.Transparent;
+            pausedLabel.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            pausedLabel.ForeColor = Color.LightGray;
+            pausedLabel.Location = new Point(593, 324);
+            pausedLabel.Name = "pausedLabel";
+            pausedLabel.Size = new Size(210, 65);
+            pausedLabel.TabIndex = 4;
+            pausedLabel.Text = "PAUSED";
+            pausedLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -78,6 +114,8 @@
             BackColor = Color.RosyBrown;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1324, 702);
+            Controls.Add(pausedLabel);
+            Controls.Add(pauseButton);
             Controls.Add(helperImagePictureBox);
             Controls.Add(TimeLabel);
             Controls.Add(panel1);
@@ -96,5 +134,8 @@
         private System.Windows.Forms.Timer Timer;
         private Label TimeLabel;
         private PictureBox helperImagePictureBox;
+        private Button pauseButton;
+        private ImageList pauseButtonImages;
+        private Label pausedLabel;
     }
 }

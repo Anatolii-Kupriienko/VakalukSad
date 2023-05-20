@@ -17,9 +17,13 @@ namespace CompleteImageGameApp.Forms
         GameLogic game;
         Image helpImage, _img;
         int w, h, timeCounter;
+        bool isPaused = false;
         public GameForm(DifficultyEnum difficulty, Image image)
         {
             InitializeComponent();
+            pauseButton.BackgroundImage = pauseButtonImages.Images[0];
+            pauseButton.BackgroundImageLayout = ImageLayout.Stretch;
+            pausedLabel.Hide();
             if (difficulty != DifficultyEnum.Hard)
             {
                 _img = image;
@@ -82,6 +86,27 @@ namespace CompleteImageGameApp.Forms
                 helperImagePictureBox.Image = helpImage;
             else
                 helperImagePictureBox.Image = _img;
+        }
+
+        private void pauseButton_Click(object sender, EventArgs e)
+        {
+            if (isPaused == false)
+            {
+                Timer.Stop();
+                game.DisableAllTiles();
+                isPaused = true;
+                pauseButton.BackgroundImage = pauseButtonImages.Images[1];
+                pausedLabel.Show();
+            }
+            else
+            {
+                Timer.Start();
+                game.EnableAllTiles();
+                isPaused = false;
+                pauseButton.BackgroundImage = pauseButtonImages.Images[0];
+                pausedLabel.Hide();
+            }
+
         }
     }
 }
