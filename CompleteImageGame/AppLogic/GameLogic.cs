@@ -221,7 +221,7 @@ namespace CompleteImageGameApp.AppLogic
             {
                 _game.Text = "Image Completed";
                 DisableAllTiles();
-                MessageBox.Show($"Так тримати College Boy\nВаш {GetTime()}, Size = {_game.Size}", "Good job College Boy",
+                MessageBox.Show($"Так тримати College Boy\nВаш {GetTime()}", "Good job College Boy",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
