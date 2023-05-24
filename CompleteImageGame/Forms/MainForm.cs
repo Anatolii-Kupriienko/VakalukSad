@@ -39,7 +39,7 @@ namespace CompleteImageGameApp.Forms
         private void startButton_Click(object sender, EventArgs e)
         {
             GameSetup.LoadLevelSelectionForm(mainPanel);
-            this.MinimumSize = new Size(1030, 470);
+            this.MinimumSize = new Size(1030, 500);
             exitButton.BringToFront();
             fullScreenButton.BringToFront();
         }
