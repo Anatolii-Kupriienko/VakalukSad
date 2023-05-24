@@ -262,7 +262,7 @@
             MinimumSize = new Size(1030, 420);
             Name = "ChooseLevelAndDifficultyForm";
             Tag = "UserChoice";
-            Text = "Choose Image";
+            Text = "Оберіть зображення";
             ((System.ComponentModel.ISupportInitialize)firstLevelPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)secondLevelPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)fourthLevelPB).EndInit();

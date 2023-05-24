@@ -121,7 +121,7 @@
             Controls.Add(panel1);
             MinimumSize = new Size(1340, 740);
             Name = "GameForm";
-            Text = "Complete The Image";
+            Text = "Збери картинку";
             TextChanged += GameForm_TextChanged;
             ((System.ComponentModel.ISupportInitialize)helperImagePictureBox).EndInit();
             ResumeLayout(false);

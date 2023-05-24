@@ -102,7 +102,7 @@
             MinimumSize = new Size(400, 400);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Main Menu";
+            Text = "Головне меню";
             WindowState = FormWindowState.Maximized;
             mainPanel.ResumeLayout(false);
             ResumeLayout(false);

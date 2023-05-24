@@ -37,6 +37,15 @@ namespace CompleteImageGameApp.AppLogic
             }
             SetOverallAndPerRowNumberOfTiles(_diff);
         }
+
+        public GameForm GameForm
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private string GetTime()
         {
             var timeLabel = _game.Controls.Find("TimeLabel", false);

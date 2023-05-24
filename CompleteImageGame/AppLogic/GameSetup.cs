@@ -11,6 +11,22 @@ namespace CompleteImageGameApp.AppLogic
 {
     public static class GameSetup
     {
+        internal static ChooseLevelAndDifficultyForm ChooseLevelAndDifficultyForm
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static MainForm MainForm
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static DifficultyEnum GetSelectedDifficulty(Form form)
         {
             foreach (var item in form.Controls)
@@ -24,9 +40,9 @@ namespace CompleteImageGameApp.AppLogic
             }
             return DifficultyEnum.Medium;
         }
-        public static ChooseLevelAndDifficultyForm LoadLevelSelectionForm(Panel panel, ChooseLevelAndDifficultyForm form)
+        public static void LoadLevelSelectionForm(Panel panel)
         {
-            form = new ChooseLevelAndDifficultyForm();
+            ChooseLevelAndDifficultyForm form = new();
             form.TopLevel = false;
             panel.Dock = DockStyle.Fill;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -34,7 +50,6 @@ namespace CompleteImageGameApp.AppLogic
             panel.Controls.Add(form);
             form.BringToFront();
             form.Show();
-            return form;
         }
         public static void ActivatePbButton(PictureBox lastSelected, PictureBox sender)
         {

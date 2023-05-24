@@ -23,6 +23,14 @@ namespace CompleteImageGameApp.Forms
             this.AcceptButton = playButton;
         }
 
+        public MainForm MainForm
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void playButton_Click(object sender, EventArgs e)
         {
             MainForm.chosenDifficulty = GameSetup.GetSelectedDifficulty(this);

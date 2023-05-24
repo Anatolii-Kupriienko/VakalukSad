@@ -38,6 +38,15 @@ namespace CompleteImageGameApp.Forms
             game.AddPiecesOnForm();
             Timer.Start();
         }
+
+        public MainForm MainForm
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void SetWidthAndHeight(DifficultyEnum difficulty)
         {
             if (difficulty == DifficultyEnum.Easy)

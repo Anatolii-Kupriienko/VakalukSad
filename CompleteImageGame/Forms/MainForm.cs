@@ -19,7 +19,6 @@ namespace CompleteImageGameApp.Forms
     {
         public static DifficultyEnum chosenDifficulty;
         public static Image chosenImage, completedImage;
-        public ChooseLevelAndDifficultyForm chooseLevelAndDifficultyForm;
         public Form activeForm;
         public MainForm()
         {
@@ -29,10 +28,17 @@ namespace CompleteImageGameApp.Forms
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
+        public GameLogic GameLogic
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void startButton_Click(object sender, EventArgs e)
         {
-            chooseLevelAndDifficultyForm = GameSetup.LoadLevelSelectionForm(mainPanel, chooseLevelAndDifficultyForm);
-            activeForm = chooseLevelAndDifficultyForm;
+            GameSetup.LoadLevelSelectionForm(mainPanel);
             this.MinimumSize = new Size(1030, 470);
             exitButton.BringToFront();
             fullScreenButton.BringToFront();
@@ -40,10 +46,6 @@ namespace CompleteImageGameApp.Forms
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            if (activeForm == this)
-            {
-                this.Close();
-            }
             activeForm.Close();
             mainPanel.Dock = DockStyle.Bottom;
             activeForm = this;
@@ -53,7 +55,7 @@ namespace CompleteImageGameApp.Forms
         {
             if (!mainPanel.Contains(activeForm))
             {
-                this.Text = "Main menu";
+                this.Text = "Головне меню";
                 this.MinimumSize = new Size(400, 400);
             }
             exitButton.BringToFront();
@@ -74,7 +76,7 @@ namespace CompleteImageGameApp.Forms
                 fullScreenButton.Text = "Вийти з повного екрану";
                 this.WindowState = FormWindowState.Maximized;
                 this.FormBorderStyle = FormBorderStyle.None;
-                fullScreenButton.Location = new Point(8, mainPanel.Height - fullScreenButton.Height-9);
+                fullScreenButton.Location = new Point(8, mainPanel.Height - fullScreenButton.Height - 9);
             }
             else
             {
