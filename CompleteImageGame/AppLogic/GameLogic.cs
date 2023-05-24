@@ -93,7 +93,6 @@ namespace CompleteImageGameApp.AppLogic
                 pictureBoxes[i].Image = _piecesList[i];
                 _game.Controls.Add(pictureBoxes[i]);
             }
-
         }
         
         public void closeToBorder(object sender, Label[] lbl)

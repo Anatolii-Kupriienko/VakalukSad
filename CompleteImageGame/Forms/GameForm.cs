@@ -81,6 +81,7 @@ namespace CompleteImageGameApp.Forms
         {
             Timer.Stop();
             helperImagePictureBox.Hide();
+            pauseButton.Hide();
             game.ShowCompletedImage();
         }
 
@@ -105,6 +106,7 @@ namespace CompleteImageGameApp.Forms
                 game.DisableAllTiles();
                 isPaused = true;
                 pauseButton.BackgroundImage = pauseButtonImages.Images[1];
+                pausedLabel.BringToFront();
                 pausedLabel.Show();
             }
             else
